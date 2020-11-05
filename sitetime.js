@@ -1,4 +1,4 @@
-function sitetime(){
+function siteTime(){
 window.setTimeout("siteTime()", 1000);
 var today = new Date()
 var todayYear = today.getFullYear()
