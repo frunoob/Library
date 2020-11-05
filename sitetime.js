@@ -75,7 +75,7 @@ function diffDays(year,month,day) {
 function daysToNow(year,month,day) {return (daysDurYears(year)-dayDurMonths(year,month)-day+todayDate+dayDurMonths(todayYear,todayMonth+1))};
 
 /* document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒" */
-// document.getElementById("sitetime").innerHTML="很努力地存活了 "+(daysToNow(2020,10,23))+" 天 "+todayHour+" 小时 "+todayMinute+" 分钟 "+todaySecond+" 秒"
+document.getElementById("sitetime").innerHTML="已经努力存活了"+(daysToNow(2020,10,23))+" 天 "+todayHour+" 小时 "+todayMinute+" 分钟 "+todaySecond+" 秒"
 console.log(daysToNow(2020,10,23),todayHour,todayMinute,todaySecond);
 }
 sitetime();
