@@ -1,3 +1,12 @@
+var b_year;
+var b_month;
+var b_day;
+function setDay(year,month,day){
+    b_year = this.year;
+    b_month = this.month;
+    b_day = this.day;
+    siteTime();
+}
 function siteTime(){
 window.setTimeout("siteTime()", 1000);
 var today = new Date()
@@ -75,6 +84,5 @@ function diffDays(year,month,day) {
 function daysToNow(year,month,day) {return (daysDurYears(year)-dayDurMonths(year,month)-day+todayDate+dayDurMonths(todayYear,todayMonth+1))};
 
 /* document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒" */
-document.getElementById("sitetime").innerHTML="已经努力存活了"+(daysToNow(2020,10,23))+" 天 "+todayHour+" 小时 "+todayMinute+" 分钟 "+todaySecond+" 秒"
+document.getElementById("daysToNow").innerHTML="已经努力存活了"+(daysToNow(b_year,b_month,b_day))+" 天 "+todayHour+" 小时 "+todayMinute+" 分钟 "+todaySecond+" 秒"
 }
-siteTime();
