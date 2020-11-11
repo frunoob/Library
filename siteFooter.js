@@ -84,8 +84,12 @@ function diffDays(year,month,day) {
 function daysToNow(year,month,day) {return (daysDurYears(year)-dayDurMonths(year,month)-day+todayDate+dayDurMonths(todayYear,todayMonth+1))};
 // 返回©2020后面对应的年份
 function toYear(){
-return (todayYear-b_year)=0?(""):("-"+todayYear);
+    if(todayYear-b_year==0){
+        return "©"+b_ear;
+    }else{
+        return "©"+b_year+"-"+todayYear;
+    }
 }
 /* document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒" */
-document.getElementById("daysToNow").innerHTML="©2020"+  +" By Frunoob 已经努力存活了"+(daysToNow(b_year,b_month,b_day))+" 天 "+todayHour+" 小时 "+todayMinute+" 分钟 "+todaySecond+" 秒"
+document.getElementById("daysToNow").innerHTML=toYear() +" By Frunoob 已经努力存活了"+(daysToNow(b_year,b_month,b_day))+" 天 "+todayHour+" 小时 "+todayMinute+" 分钟 "+todaySecond+" 秒"
 }
