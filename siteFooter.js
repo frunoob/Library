@@ -92,7 +92,7 @@ function siteTime() {
         }
     }
     /* document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒" */
-    document.getElementById("daysToNow").innerHTML = toYear() + " By Frunoob 已经努力存活了" + (daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
+    document.getElementById("daysToNow").innerHTML = toYear() + " By Frunoob 已经活蹦乱跳了" + (daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
 }
 footer=document.getElementById("footer-wrap");
 footer.style.padding = 0;
