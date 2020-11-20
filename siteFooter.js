@@ -95,5 +95,9 @@ function siteTime() {
     document.getElementById("yearsToNow").innerHTML = toYear()+ ' <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i>';
     document.getElementById("daysToNow").innerHTML=" By Frunoob 本站已运行" + (daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
 }
-footer=document.getElementById("footer-wrap");
-footer.style.padding = 0;
+// 页脚内边距设为0
+/* footer=document.getElementById("footer-wrap");
+footer.style.padding = 0; */
+// 移除页脚样式
+var app = document.getElementById('footer');
+app.removeAttribute('id')
