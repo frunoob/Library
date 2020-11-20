@@ -100,6 +100,6 @@ function siteTime() {
 footer.style.padding = 0; */
 // 移除页脚样式
 /* var app = document.getElementById('footer-wrap');
-app.removeAttribute('id') */
+app.removeAttribute('id'); */
 var app = document.getElementsByTagName("footer")[0];
-app.removeAttribute('style');
+app.removeAttribute('id');
