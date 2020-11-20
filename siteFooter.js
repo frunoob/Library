@@ -92,7 +92,7 @@ function siteTime() {
         }
     }
     /* document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒" */
-    document.getElementById("yearsToNow").innerHTML = toYear()+ '<i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i>';
+    document.getElementById("yearsToNow").innerHTML = toYear()+ ' <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i>';
     document.getElementById("daysToNow").innerHTML=" By Frunoob 本站已运行" + (daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
 }
 footer=document.getElementById("footer-wrap");
