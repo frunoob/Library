@@ -105,9 +105,15 @@ var app = document.getElementsByTagName("footer")[0];
 app.removeAttribute('id');
 
 // 页眉颜色透明
-var app3 = footer=document.getElementById("page-header");
-app3.removeAttribute('style');
-app3.style.backgroundColor="rgba(0,0,0,0)";
+
+// 会影响其他的post页面
+/* var app3 = footer=document.getElementById("page-header");
+// app3.removeAttribute('style');
+app3.style.opacity=0. */
+
+// 方法二
+var app = document.querySelector("header.full_page");
+app.style.backgroundColor="rgba(0,0,0,0)";
 
 //添加动图在返回顶部按钮旁边
 /*添加图片top*/
