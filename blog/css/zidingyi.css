@@ -95,9 +95,19 @@ i.fa-fw.fas.fa-heart.fa-lg{
   src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@master/font/xiaokai.ttf);
 }
 
+
 #yearsToNow{
-  font-family: MilkyNice;
+  font-family: xiaokai;
+}
+#yearsToNow::after{
+  content: '\A';
+  white-space: pre;
 }
 #daysToNow{
   font-family: xiaokai;
+  font-size: larger;
+  /* background-color: rgba(0, 0, 0, 0.349);
+
+  font-size: 200%; */
+  /* letter-spacing: -5%; */
 }

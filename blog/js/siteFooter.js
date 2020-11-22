@@ -91,14 +91,14 @@ function siteTime() {
     // 返回©2020后面对应的年份
     function toYear() {
         if (todayYear - b_year == 0) {
-            return "©" + b_year;
+            return b_year;
         } else {
-            return "©" + b_year + "-" + todayYear;
+            return b_year + "-" + todayYear;
         }
     }
     /* document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒" */
     document.getElementById("yearsToNow").innerHTML = toYear()+ ' <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i>';
-    document.getElementById("daysToNow").innerHTML=" By Frunoob 本站已运行" + (daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
+    document.getElementById("daysToNow").innerHTML=(daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
 }
 // 页脚内边距设为0
 footer=document.getElementById("footer-wrap");
