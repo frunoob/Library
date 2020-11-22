@@ -21,7 +21,7 @@ a:hover{
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #49b1f5;
+    background-color: #49f557b9;
     background-image: -webkit-linear-gradient(
       45deg,
       rgba(255, 255, 255, 0.4) 25%,
@@ -61,4 +61,25 @@ span.space{
 /* 主页 love fontaseme */
 i.fa-fw.fas.fa-heart.fa-lg{
   color:#FF6A6A;animation: announ_animation 0.8s linear infinite;
+}
+
+
+[data-theme='light'] {
+  --search-bg: #ffffffa8;
+  --tab-border-color: #62626275;
+  --tab-botton-bg: #ffffff47;
+  --tab-botton-color: #000000;
+  --tab-button-hover-bg: #dcdcdcb0;
+  --tab-button-active-bg: #827f7f6e;
+  --card-bg: rgba(226, 226, 226, 0.9);
+  --btn-hover-color: #56f15591;
+  --btn-color: #000;
+  --btn-bg: #7b7b7cc7;
+  --text-bg-hover: #49f56ea1;
+}
+#page-header.post-bg{
+  opacity: 0.75;
+}
+#page-header.not-index-bg{
+  background-color: rgba(0, 0, 0, 0);
 }
