@@ -83,3 +83,21 @@ i.fa-fw.fas.fa-heart.fa-lg{
 #page-header.not-index-bg{
   background-color: rgba(0, 0, 0, 0);
 }
+
+
+/* 声明字体*/
+@font-face {
+  font-family: MilkyNice;
+  src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@master/font/MilkyNice.otf);
+}
+@font-face {
+  font-family: xiaokai;
+  src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@master/font/xiaokai.ttf);
+}
+
+#yearsToNow{
+  font-family: MilkyNice;
+}
+#daysToNow{
+  font-family: xiaokai;
+}
