@@ -1,12 +1,17 @@
 var b_year = 2020;
 var b_month = 10;
-var b_day = 23;
+var b_day = 23; *
 
-function setDay(year, month, day) {
-    b_year = year;
-    b_month = month;
-    b_day = day;
-    siteTime();
+function setDay() {
+    if(arguments.length === 0){
+        siteTime();
+    }else if (arguments.length === 3){
+        b_year = arguments[0];
+        b_month = arguments[1];
+        b_day = arguments[2];
+        siteTime();
+        }
+    
 }
 function siteTime() {
     window.setTimeout("siteTime()", 1000);
