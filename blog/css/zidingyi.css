@@ -43,3 +43,22 @@ a:hover{
     color: #fff;
     background-color: #49b1f5;
   }
+
+  /* // 设置首页页码颜色 */
+
+a.page-number{
+    color: white;
+    background-color: rgba(24, 221, 41, 0.43);
+}
+a.extend.next{
+  color:white;
+}
+span.space{
+  color:crimson;
+  font-size: larger;
+
+}
+/* 主页 love fontaseme */
+i.fa-fw.fas.fa-heart.fa-lg{
+  color:#FF6A6A;animation: announ_animation 0.8s linear infinite;
+}

@@ -118,7 +118,7 @@ app3.style.opacity=0. */
 
 // 方法二
 var app = document.querySelector("header.full_page");
-app.style.backgroundColor="rgba(0,0,0,0)";
+if(app==null) {}else{app.style.backgroundColor="rgba(0,0,0,0)";}
 
 //添加动图在返回顶部按钮旁边
 /*添加图片top*/
@@ -130,3 +130,7 @@ app.style.backgroundColor="rgba(0,0,0,0)";
 // if (full_page.length != 0) {
 //   full_page[0].style.background = "transparent";
 // }
+
+/* 主页 love fontaseme */
+// var app = document.querySelector("i.fa-fw.fas.fa-heart.fa-lg");
+// app.style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;";
