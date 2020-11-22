@@ -1,6 +1,6 @@
 var b_year = 2020;
 var b_month = 10;
-var b_day = 23; *
+var b_day = 23; 
 
 function setDay() {
     if(arguments.length === 0){
