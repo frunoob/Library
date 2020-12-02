@@ -15,13 +15,14 @@ function setDay() {
 }
 function siteTime() {
     window.setTimeout("siteTime()", 1000);
-    var today = new Date()
-    var todayYear = today.getFullYear()
-    var todayMonth = today.getMonth()
-    var todayDate = today.getDate()
-    var todayHour = today.getHours()
-    var todayMinute = today.getMinutes()
-    var todaySecond = today.getSeconds()
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth();
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var todayWeek = today.getDay();
     // 返回当前年份的天数
     function daysInYear(year) {
         if ((year % 100 == 0 && year % 400 == 0) || year % 4 == 0) return 366;

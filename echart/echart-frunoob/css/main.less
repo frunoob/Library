@@ -1,0 +1,258 @@
+* {
+    font-size: 16px;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    overflow: hidden;
+}
+
+
+
+html,body{
+    height: 100%;/* 设置背景全屏必须设置此项为100% */
+}
+body {
+    /* 设置页面背景 */
+    background: url(../img/body-bg.png) 
+    no-repeat top center;/* 图片不重复 顶部 居中放大100% */
+    background-size: 100% 100%;/* 设置背景拉伸为全屏 */
+}
+/* 页眉 */
+  header{
+    position: relative;
+    height: 3.875rem;
+    &::before{
+      content: "";
+      background-image: url(../img/panel-bg.jpg);
+      background-size: auto;
+      z-index: -1;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      opacity: 0.3;
+      margin: auto;
+    }
+    h1 {
+
+        color: #ffffff;/* 颜色设置为白色 */
+        font-size: 4rem;
+        font-family: xiaokang;
+        text-align: center; /* 居中类型 */
+        transform: translateY(-1rem);
+    }
+}
+/* 设置字体 */
+@font-face{
+  font-family: digit;
+  src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@0.0.1/echart/echart/font/DS-DIGIT.TTF);
+  font-display: block;
+}
+@font-face{
+  font-family: xiaokang;
+  src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@master/font/xiaokai.ttf);
+  /* 在本字体加载完成之前，会将当前设置为该字体的内容设置为透明 */
+  font-display: block;
+}
+@font-face{
+  font-family: milky;
+  src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@master/font/MilkyNice.otf);
+  font-display: block;
+}
+/* 页面主题 */
+.mainbox{
+    display: flex;/* 让三个盒子在同一行显示 */
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0.125rem ;/* 设置内边框 */
+    .column{ /* 所有盒子占2份 */
+        flex: 2;
+        // 盒子外边距: 上边距为0，左右下边距为3px
+        margin: 0 0.0375rem 0.125rem;
+        // 盒子内标题
+        h2{
+          height: 45px;
+          color: #fff;
+          line-height: 1rem;
+          text-align: center;
+          font-size: 1rem;
+          font-weight: 400;
+      }
+    }
+    .column:nth-child(2){/* 第1个盒子占4份 */
+        flex: 4;
+        /* 设置左盒子右和下边距为15px 上和左边距为0 */
+        margin: 0 0.1875rem 0.1875rem 0;
+    }
+    /* 公共面板样式 */
+    .panel{
+        position: relative;
+        height: 15.625rem;
+        border: 1px solid rgba(25, 186, 139, 0.17);
+        padding: 0 0.1875rem 0.5rem; /* 保证内容在中间 */
+        margin-bottom: 0.1875rem;
+        // // 左上角
+        // &::before {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     content: "";
+        //     width: 10px;
+        //     height: 10px;
+        //     border-top: 2px solid #02a6b5;
+        //     border-left: 2px solid #02a6b5;
+        //   }
+        // //   右上角
+        //   &::after {
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     content: "";
+        //     width: 10px;
+        //     height: 10px;
+        //     border-top: 2px solid #02a6b5;
+        //     border-right: 2px solid #02a6b5;
+        //   }
+          // 设置panel背景
+          .panel-bg{
+            z-index: -1;
+            position: absolute;
+            left: -9px;
+            right: 0px;
+            top: -57px;
+            bottom: -81px;
+            background: url(../img/panel-bg2.png) ;
+            background-size: 100% 100%;
+            opacity: 5;
+            margin: auto;
+          }
+          /* 设置右下角和左下角的直角边框效果 */
+          // .panel-footer {
+          //   position: absolute;
+          //   left: 0;
+          //   bottom: 0;
+          //   width: 100%;
+          //   // 左下角
+          //   &::before {
+          //     position: absolute;
+          //     bottom: 0;
+          //     left: 0;
+          //     content: "";
+          //     width: 10px;
+          //     height: 10px;
+          //     border-bottom: 2px solid #02a6b5;
+          //     border-left: 2px solid #02a6b5;
+          //   }
+          //   // 右下角
+          //   &::after {
+          //     position: absolute;
+          //     bottom: 0;
+          //     right: 0;
+          //     content: "";
+          //     width: 10px;
+          //     height: 10px;
+          //     border-bottom: 2px solid #02a6b5;
+          //     border-right: 2px solid #02a6b5;
+          //   }
+          // }
+            // 设置每个面板内标题的样式
+          h2{
+            height: 0.6rem;
+            color: #fff;
+            line-height: 0.6rem;
+            text-align: center;
+            font-size: 0.25rem;
+            font-weight: 400;
+          }
+          // 设置图表容器的大小
+          
+        .chart{
+          width: 100%;
+          height:100%;
+          // transform: translate(2%,7%);
+        } 
+    }
+/* 左上角 */
+    .left1 .chart{
+      transform: translate(0%,0%)
+    }
+    /* 右上角 */
+    .right1 .chart{
+      transform: translate(0%,0%)
+    }
+}
+@keyframes animated-border {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255,255,255,0.4);
+  }
+  100% {
+     box-shadow: 0 0 0 20px rgba(255,255,255,0);
+  }
+}
+.maps{
+  animation: animated-border 1.5s infinite;
+  /* maps面板的高度 */
+  height: 24.8125rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  padding: 0 0.1875rem 0.5rem; /* 保证内容在中间 */
+  margin: 1.25rem;
+}
+/* 中间顶部面板 */
+.middle1{
+  height: 3.125rem;
+  width: 36.25rem;
+  box-shadow: 0px 0px 12px #000000a8;
+  margin-bottom: 5px;
+  background-color: #029eb53b;
+  position: relative;
+  // 水平居中
+  left: 50%;
+  transform: translate(-50%);
+  // 字体
+  font-size: 15px;
+  // 下边距
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem ;
+  
+}
+/* 中间底部面板 */
+.panel.middle2{
+  height: 15.5625rem;
+}
+
+/* 中间上部数字显示部分 */
+.no{
+  display: flex;
+  .num{
+    color: aquamarine;
+    text-align: center;
+    flex: 5;
+    height: 100%;
+    // 数字标题部分
+    .no-top{
+      color: #358fa5;
+      height: 1rem;
+    }
+    // 数字部分
+    .no-bottom{
+      font-family: milky;
+      font-size: 2rem;
+    }
+  }
+  // 设置两个数字之间的竖线
+  .num:nth-child(1){
+    position: relative; 
+    &::before{
+      content: "";
+      position: absolute;
+      right: 0;
+      border-right: #358fa5 2px solid;
+      height: 50%;
+      transform: translateY(50%);
+      margin-right: 0.3125rem;
+    }
+    
+  }
+}

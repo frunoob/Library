@@ -24,9 +24,17 @@ right: 10,
 bottom: 40
     },
     title: {
-        left: 'center',
+        left: '30%',
         text: '中印累计感染人数对比',
     },
+            // 图例图标
+            legend: {
+                show: true,
+                left:'2%',
+                top:'2%',
+                // 竖着放
+                orient: "vertical"
+              },
     xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -36,6 +44,7 @@ bottom: 40
         type: 'value',
         boundaryGap: [0, '100%']
     },
+
     dataZoom: [{
         type: 'inside',
         start: 0,
@@ -102,6 +111,19 @@ bottom: 40
     if (option && typeof option === 'object') {
     myChart.setOption(option,true);
     }
+    setInterval((function(){ myChart.setOption({
+        dataZoom: [{
+            start : begin[i],
+            end: end[i],
+            type: "inside"
+          }, {
+            start : begin[i],
+            end: end[i],
+          }],
+    });	
+    if(i+1<begin.length) {i++;}
+    else {i=0;}
+}),150);
     window.addEventListener('resize', function() {
     myChart.resize();
     });
@@ -117,6 +139,14 @@ var xAxisData = ["1月22日","1月23日","01月24日","1月25日","1月26日","1
 var data1 = ["548","643","920","1406","2075","2877","5509","6087","8141","9802","11891","16630","19716","23707","27440","30587","34110","36814","39829","42354","44386","44759","59895","66358","68413","70513","72434","74211","74619","75077","75550","77001","77022","77241","77754","78166","78600","78928","79356","79932","80136","80261","80386","80537","80690","80770","80823","80860","80887","80921","80932","80945","80977","81003","81033","81058","81102","81156","81250","81305","81435","81498","81591","81661","81782","81897","81999","82122","82198","82279","82361","82432","82511","82543","82602","82665","82718","82809","82883","82941","83014","83134","83213","83306","83356","83403","83760","83787","83805","83817","83853","83868","83884","83899","83909","83912","83918","83940","83944","83956","83959","83959","83964","83966","83968","83970","83975","83976","83990","84010","84011","84018","84024","84029","84038","84044","84054","84063","84063","84063","84063","84081","84084","84095","84102","84103","84106","84106","84123","84128","84146","84154","84161","84160","84171","84177","84186","84191","84195","84198","84209","84216","84228","84286","84335","84378","84422","84458","84494","84494","84553","84572","84624","84653","84673","84701","84725","84743","84757","84780","84785","84816","84830","84838","84857","84871","84889","84917","84950","84992","84992","85071","85117","85117","85226","85246","85327","85402","85418","85503","85622","85708","85906","86045","86202","86381","86570","86783","86990","87213","87489","87655","87827","87985","88099","88206","88328","88460","88580","88672","88793","88906","88958","89045","89144","89214","89279","89375","89441","89494","89527","89567","89616","89654","89695","89718","89752","89784","89814","89836","89863","89895","89914","89933","89953","89986","90008","90025","90058","90078","90087","90100","90127","90145","90168","90197","90219","90235","90253","90294","90311","90334","90369","90381","90399","90409","90424","90441","90456","90483","90505","90528","90545","90567","90584","90604","90629","90652","90667","90687","90728","90751","90778","90812","90830","90858","90869","90905","90925","90955","90972","91006","91022","91044","91073","91108","91128","91151","91175","91222","91271","91299","91339","91366","91397","91452","91478","91509","91552","91591","91622","91665","91693","91719","91752","91783","91807","91828","91850","91872","91885","91906","91935","91977","92037","92116","92211","92211"];
 var data2 = ["1","1","2","2","5","5","5","6","6","8","8","8","11","11","11","12","12","12","12","12","13","13","14","14","14","14","14","14","14","14","16","16","16","16","16","16","17","17","25","32","55","74","107","184","237","403","519","594","782","1147","1586","2219","2978","3212","4679","6512","9169","13663","20030","26025","34855","46086","56698","68773","86613","105293","124900","143779","165861","192177","218060","248447","280417","313432","341629","371802","403212","435407","469989","503474","532782","559709","585518","614082","644247","675648","708317","736244","761933","790353","816413","845727","878911","912662","944234","971078","994265","1018926","1046737","1076224","1110464","1138228","1162685","1186067","1210577","1235666","1263402","1290151","1315099","1333970","1353397","1376122","1397085","1424243","1449498","1473514","1491829","1513816","1534871","1557933","1583798","1607136","1628215","1648160","1666553","1685956","1704489","1727357","1751591","1775446","1794465","1811393","1832782","1852818","1874167","1899577","1920952","1938614","1956152","1974502","1995451","2018491","2043407","2068629","2087647","2107160","2130852","2157351","2185217","2216199","2248109","2274073","2304748","2340965","2375397","2415764","2461108","2502461","2542870","2582913","2628921","2680401","2736008","2787854","2833398","2882973","2927135","2987790","3047640","3110213","3178067","3238099","3297169","3355967","3423365","3490997","3568129","3639807","3702274","3762984","3824471","3888691","3960584","4029096","4102284","4167634","4222603","4278571","4344356","4416186","4483778","4551687","4609512","4655782","4700348","4757653","4812056","4871531","4929841","4984276","5030646","5079376","5126287","5183078","5234905","5299674","5346442","5387615","5424130","5469161","5516529","5560639","5608892","5652543","5686994","5723486","5763463","5808959","5854066","5901035","5946384","5981164","6016376","6058049","6098989","6142770","6192912","6236048","6267558","6291102","6317999","6351889","6387969","6435397","6476368","6510673","6544543","6583923","6622377","6667300","6716061","6758513","6796955","6848493","6887964","6926550","6972258","7020332","7064631","7101911","7134201","7176996","7218190","7263469","7317870","7366544","7402636","7441546","7485492","7536127","7594454","7650489","7704496","7750330","7791036","7843905","7903375","7967731","8036177","8093047","8142343","8209349","8270452","8333473","8408798","8489774","8572561","8634322","8700898","8776888","8855570","8945782","9044297","9133179","9208738","9292225","9416845","9519714","9645899","9771614","9899614","10009510","10130876","10268562","10412106","10573351","10750907","10917616","11050860","11211211","11371710","11542094","11730049","11926053","12104117","12246849","12416039","12364713"];
 option = {
+        // 图例图标
+        legend: {
+            show: true,
+            left:'2%',
+            top:'2%',
+            // 竖着放
+            orient: "vertical"
+          },
     title: {
         text: '中美累计感染人数对比',
         left:'center'
@@ -139,6 +169,14 @@ option = {
     },
     yAxis: {
     },
+    // 图例图标
+    legend: {
+        show: true,
+        left:'2%',
+        top:'2%',
+        // 竖着放
+        orient: "vertical"
+      },
     dataZoom: [{
         start: 15,
         end:35,
@@ -184,6 +222,20 @@ option = {
     if (option && typeof option === 'object') {
     myChart.setOption(option,true);
     }
+    let righti=0;
+    setInterval((function(){ myChart.setOption({
+        dataZoom: [{
+            start : begin[righti],
+            end: end[righti],
+            type: "inside"
+          }, {
+            start : begin[righti],
+            end: end[righti],
+          }],
+    });	
+    if(righti+1<begin.length) {righti++;}
+    else {i=0;}
+}),3000);
     window.addEventListener('resize', function() {
     myChart.resize();
     });
@@ -492,6 +544,76 @@ option = {
     });
 })();
 
+
+/* maps */
+/* 函数注释 */
+(function () {
+    // 基于准备好的dom，初始化echarts实例
+    var dom = document.querySelector(".maps");
+    var myChart = echarts.init(dom,'walden');
+    // 指定图表的配置项和数据
+    option = null;
+    option = {
+        title: {
+            text: '新型冠状病毒肺炎疫情地图',
+            subtext: '数据来自BBC新闻网',
+            left: 'center',
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: function(params) {
+                var value = params.value + '';
+                return params.seriesName + '<br/>' + params.name + ' : ' + value+'人';
+            }
+        },
+        toolbox: {
+            show: false,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            feature: {
+                dataView: {
+                    readOnly: false
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        visualMap: {
+            min: 0,
+            max: 13000000,
+            text: ['High', 'Low'],
+            realtime: false,
+            calculable: true,
+            color: ['orangered', 'yellow', 'lightskyblue']
+        },
+        series: [{
+            name: '累计确诊人数',
+            type: 'map',
+            bottom:'',
+            top:'20%',
+            mapType: 'world',
+            roam: true,
+            itemStyle: {
+                emphasis: {
+                    label: {
+                        show: true
+                    }
+                }
+            },
+            data: [{"name":"United States","value":12679209},{"name":"India","value":9222216},{"name":"Brazil","value":6121449},{"name":"Russia","value":2162503},{"name":"France","value":2153815},{"name":"Spain","value":1605066},{"name":"United Kingdom","value":1557007},{"name":"Italy","value":1480874},{"name":"Argentina","value":1381782},{"name":"Colombia","value":1262494},{"name":"Mexico","value":1060152},{"name":"Germany","value":962906},{"name":"Peru","value":952439},{"name":"Poland","value":924422},{"name":"Iran","value":894385},{"name":"South Africa","value":772252},{"name":"Ukraine","value":661858},{"name":"Belgium","value":561803},{"name":"Chile","value":544092},{"name":"Iraq","value":539749},{"name":"Indonesia","value":511836},{"name":"Czech Republic","value":502534},{"name":"Netherlands","value":493744},{"name":"Turkey","value":467730},{"name":"Bangladesh","value":454146},{"name":"Romania","value":440344},{"name":"Philippines","value":422915},{"name":"Pakistan","value":382892},{"name":"Saudi Arabia","value":355741},{"name":"Canada","value":345277},{"name":"Morocco","value":331527},{"name":"Israel","value":330935},{"name":"Switzerland","value":304593},{"name":"Portugal","value":274011},{"name":"Austria","value":260512},{"name":"Sweden","value":225560},{"name":"Nepal","value":226026},{"name":"Jordan","value":192996},{"name":"Ecuador","value":187230},{"name":"Hungary","value":185687},{"name":"United Arab Emirates","value":161365},{"name":"Panama","value":156930},{"name":"Bolivia","value":144147},{"name":"Kuwait","value":141217},{"name":"Serbia","value":140608},{"name":"Dominican Republic","value":138829},{"name":"Qatar","value":137851},{"name":"Japan","value":135400},{"name":"Costa Rica","value":133190},{"name":"Bulgaria","value":129348},{"name":"Belarus","value":128449},{"name":"Kazakhstan","value":127580},{"name":"Armenia","value":127522},{"name":"Oman","value":122579},{"name":"Guatemala","value":118722},{"name":"Lebanon","value":118705},{"name":"Georgia","value":114889},{"name":"Egypt","value":113742},{"name":"Croatia","value":111617},{"name":"Ethiopia","value":107109},{"name":"Honduras","value":105572},{"name":"Moldova","value":101203},{"name":"Venezuela","value":100498},{"name":"Slovakia","value":99304},{"name":"Azerbaijan","value":98927},{"name":"Greece","value":95137},{"name":"Tunisia","value":90213},{"name":"China","value":86469},{"name":"Bahrain","value":85886},{"name":"Myanmar","value":83356},{"name":"Bosnia and Herzegovina","value":83328},{"name":"Kenya","value":79322},{"name":"Libya","value":79180},{"name":"Paraguay","value":77891},{"name":"Algeria","value":77000},{"name":"Palestine","value":73196},{"name":"Uzbekistan","value":72039},{"name":"Denmark","value":71654},{"name":"Ireland","value":71187},{"name":"Kyrgyzstan","value":70744},{"name":"Nigeria","value":66607},{"name":"Slovenia","value":65778},{"name":"Malaysia","value":59817},{"name":"Singapore","value":58165},{"name":"North Macedonia","value":56164},{"name":"Lithuania","value":51655},{"name":"Ghana","value":50941},{"name":"Puerto Rico","value":46923},{"name":"Afghanistan","value":45017},{"name":"El Salvador","value":37884},{"name":"Kosovo","value":35549},{"name":"Albania","value":34944},{"name":"Norway","value":33183},{"name":"Montenegro","value":32188},{"name":"South Korea","value":31735},{"name":"Luxembourg","value":31111},{"name":"Australia","value":27854},{"name":"Cameroon","value":22692},{"name":"Finland","value":22652},{"name":"Sri Lanka","value":21469},{"name":"Ivory Coast","value":21148},{"name":"Uganda","value":18890},{"name":"Zambia","value":17466},{"name":"Madagascar","value":17310},{"name":"Sudan","value":16431},{"name":"Senegal","value":15897},{"name":"Mozambique","value":15231},{"name":"Angola","value":14634},{"name":"Namibia","value":13897},{"name":"Latvia","value":13693},{"name":"French Polynesia","value":12978},{"name":"Guinea","value":12841},{"name":"Maldives","value":12810},{"name":"DR Congo","value":12310},{"name":"Tajikistan","value":11932},{"name":"Estonia","value":10541},{"name":"Jamaica","value":10418},{"name":"Cape Verde","value":10400},{"name":"Donetsk PR","value":9844},{"name":"Zimbabwe","value":9398},{"name":"Haiti","value":9208},{"name":"Malta","value":9137},{"name":"Gabon","value":9131},{"name":"Cyprus","value":8456},{"name":"Mauritania","value":8096},{"name":"Cuba","value":7950},{"name":"Bahamas","value":7395},{"name":"Syria","value":7225},{"name":"Botswana","value":6820},{"name":"Trinidad and Tobago","value":6488},{"name":"Guam","value":6476},{"name":"Andorra","value":6428},{"name":"Eswatini","value":6247},{"name":"Malawi","value":6018},{"name":"Nicaragua","value":5725},{"name":"Hong Kong","value":5702},{"name":"Rwanda","value":5665},{"name":"Djibouti","value":5661},{"name":"Congo","value":5632},{"name":"Abkhazia","value":5318},{"name":"Iceland","value":5312},{"name":"Suriname","value":5300},{"name":"Guyana","value":5189},{"name":"Equatorial Guinea","value":5130},{"name":"Belize","value":5056},{"name":"Central African Republic","value":4911},{"name":"Uruguay","value":4870},{"name":"Aruba","value":4778},{"name":"Somalia","value":4445},{"name":"Mali","value":4326},{"name":"Thailand","value":3926},{"name":"The Gambia","value":3726},{"name":"South Sudan","value":3047},{"name":"Benin","value":2844},{"name":"Togo","value":2651},{"name":"Burkina Faso","value":2635},{"name":"Guinea-Bissau","value":2419},{"name":"Sierra Leone","value":2408},{"name":"Yemen","value":2114},{"name":"Lesotho","value":2085},{"name":"Curaçao","value":1827},{"name":"South Ossetia","value":1684},{"name":"New Zealand","value":1683},{"name":"Luhansk PR","value":1669},{"name":"Chad","value":1649},{"name":"U.S. Virgin Islands","value":1491},{"name":"Liberia","value":1452},{"name":"San Marino","value":1428},{"name":"Niger","value":1351},{"name":"Vietnam","value":1316},{"name":"Somaliland","value":1223},{"name":"Liechtenstein","value":1158},{"name":"USS Theodore Roosevelt","value":1102},{"name":"Charles de Gaulle","value":1081},{"name":"Northern Cyprus","value":1048},{"name":"Sint Maarten","value":1020},{"name":"São Tomé and Príncipe","value":981},{"name":"Gibraltar","value":887},{"name":"Turks and Caicos Islands","value":746},{"name":"Diamond Princess","value":712},{"name":"Jersey","value":672},{"name":"Mongolia","value":672},{"name":"Taiwan","value":623},{"name":"Papua New Guinea","value":599},{"name":"Comoros","value":596},{"name":"Burundi","value":589},{"name":"Monaco","value":573},{"name":"Faroe Islands","value":497},{"name":"Eritrea","value":491},{"name":"Mauritius","value":453},{"name":"Artsakh","value":404},{"name":"Bhutan","value":386},{"name":"Isle of Man","value":359},{"name":"Cambodia","value":306},{"name":"Guernsey","value":282},{"name":"Barbados","value":262},{"name":"Cayman Islands","value":250},{"name":"Saint Lucia","value":226},{"name":"Bermuda","value":214},{"name":"Seychelles","value":166},{"name":"Costa Atlantica","value":148},{"name":"Brunei","value":148},{"name":"Antigua and Barbuda","value":139},{"name":"Bonaire","value":134},{"name":"Greg Mortimer","value":128},{"name":"Northern Mariana Islands","value":100},{"name":"Saint Vincent","value":84},{"name":"Dominica","value":77},{"name":"British Virgin Islands","value":72},{"name":"Macau","value":46},{"name":"Grenada","value":41},{"name":"Fiji","value":35},{"name":"East Timor","value":30},{"name":"New Caledonia","value":30},{"name":"Sahrawi Arab DR","value":28},{"name":"Vatican City","value":27},{"name":"Laos","value":25},{"name":"Saint Kitts and Nevis","value":19},{"name":"Greenland","value":17},{"name":"Falkland Islands","value":16},{"name":"Saint Pierre and Miquelon","value":16},{"name":"Solomon Islands","value":16},{"name":"Sint Eustatius","value":14},{"name":"Montserrat","value":13},{"name":"MS Zaandam","value":13},{"name":"Coral Princess","value":12},{"name":"SeaDream I","value":9},{"name":"HNLMS Dolfijn","value":8},{"name":"Marshall Islands","value":5},{"name":"Saba","value":5},{"name":"Anguilla","value":3},{"name":"American Samoa","value":3},{"name":"Wallis and Futuna","value":2},{"name":"Samoa","value":1},{"name":"Vanuatu","value":1},{"name":"Tanzania","value":"-"}]
+         }]
+    };;
+    // 使用刚指定的配置项和数据显示图表。
+    if (option && typeof option === 'object') {
+    myChart.setOption(option,true);
+    }
+    
+    window.addEventListener('resize', function() {
+    myChart.resize();
+    });
+})();
+
 /* middle bottom */
 (function () {
     // 基于准备好的dom，初始化echarts实例
@@ -595,76 +717,28 @@ option = {
     // 使用刚指定的配置项和数据显示图表。
     if (option && typeof option === 'object') {
     myChart.setOption(option,true);
-    }
-    window.addEventListener('resize', function() {
+    } 
+    let i = 0;
+    setInterval((function(){ myChart.setOption({
+        dataZoom: [{
+            start : begin[i],
+            end: end[i],
+            type: "inside"
+          }, {
+            start : begin[i],
+            end: end[i],
+          }],
+    });	
+    if(i+1<begin.length) {i++;}
+    else {i=0;}
+}),1000);
+   window.addEventListener('resize', function() {
     myChart.resize();
     });
 })();
 
-/* maps */
-/* 函数注释 */
-(function () {
-    // 基于准备好的dom，初始化echarts实例
-    var dom = document.querySelector(".maps");
-    var myChart = echarts.init(dom,'walden');
-    // 指定图表的配置项和数据
-    option = null;
-    option = {
-        title: {
-            text: '新型冠状病毒肺炎疫情地图',
-            subtext: '数据来自BBC新闻网',
-            left: 'center',
-        },
-        tooltip: {
-            trigger: 'item',
-            formatter: function(params) {
-                var value = params.value + '';
-                return params.seriesName + '<br/>' + params.name + ' : ' + value+'人';
-            }
-        },
-        toolbox: {
-            show: false,
-            orient: 'vertical',
-            left: 'right',
-            top: 'center',
-            feature: {
-                dataView: {
-                    readOnly: false
-                },
-                restore: {},
-                saveAsImage: {}
-            }
-        },
-        visualMap: {
-            min: 0,
-            max: 13000000,
-            text: ['High', 'Low'],
-            realtime: false,
-            calculable: true,
-            color: ['orangered', 'yellow', 'lightskyblue']
-        },
-        series: [{
-            name: '累计确诊人数',
-            type: 'map',
-            bottom:'',
-            top:'20%',
-            mapType: 'world',
-            roam: true,
-            itemStyle: {
-                emphasis: {
-                    label: {
-                        show: true
-                    }
-                }
-            },
-            data: [{"name":"United States","value":12679209},{"name":"India","value":9222216},{"name":"Brazil","value":6121449},{"name":"Russia","value":2162503},{"name":"France","value":2153815},{"name":"Spain","value":1605066},{"name":"United Kingdom","value":1557007},{"name":"Italy","value":1480874},{"name":"Argentina","value":1381782},{"name":"Colombia","value":1262494},{"name":"Mexico","value":1060152},{"name":"Germany","value":962906},{"name":"Peru","value":952439},{"name":"Poland","value":924422},{"name":"Iran","value":894385},{"name":"South Africa","value":772252},{"name":"Ukraine","value":661858},{"name":"Belgium","value":561803},{"name":"Chile","value":544092},{"name":"Iraq","value":539749},{"name":"Indonesia","value":511836},{"name":"Czech Republic","value":502534},{"name":"Netherlands","value":493744},{"name":"Turkey","value":467730},{"name":"Bangladesh","value":454146},{"name":"Romania","value":440344},{"name":"Philippines","value":422915},{"name":"Pakistan","value":382892},{"name":"Saudi Arabia","value":355741},{"name":"Canada","value":345277},{"name":"Morocco","value":331527},{"name":"Israel","value":330935},{"name":"Switzerland","value":304593},{"name":"Portugal","value":274011},{"name":"Austria","value":260512},{"name":"Sweden","value":225560},{"name":"Nepal","value":226026},{"name":"Jordan","value":192996},{"name":"Ecuador","value":187230},{"name":"Hungary","value":185687},{"name":"United Arab Emirates","value":161365},{"name":"Panama","value":156930},{"name":"Bolivia","value":144147},{"name":"Kuwait","value":141217},{"name":"Serbia","value":140608},{"name":"Dominican Republic","value":138829},{"name":"Qatar","value":137851},{"name":"Japan","value":135400},{"name":"Costa Rica","value":133190},{"name":"Bulgaria","value":129348},{"name":"Belarus","value":128449},{"name":"Kazakhstan","value":127580},{"name":"Armenia","value":127522},{"name":"Oman","value":122579},{"name":"Guatemala","value":118722},{"name":"Lebanon","value":118705},{"name":"Georgia","value":114889},{"name":"Egypt","value":113742},{"name":"Croatia","value":111617},{"name":"Ethiopia","value":107109},{"name":"Honduras","value":105572},{"name":"Moldova","value":101203},{"name":"Venezuela","value":100498},{"name":"Slovakia","value":99304},{"name":"Azerbaijan","value":98927},{"name":"Greece","value":95137},{"name":"Tunisia","value":90213},{"name":"China","value":86469},{"name":"Bahrain","value":85886},{"name":"Myanmar","value":83356},{"name":"Bosnia and Herzegovina","value":83328},{"name":"Kenya","value":79322},{"name":"Libya","value":79180},{"name":"Paraguay","value":77891},{"name":"Algeria","value":77000},{"name":"Palestine","value":73196},{"name":"Uzbekistan","value":72039},{"name":"Denmark","value":71654},{"name":"Ireland","value":71187},{"name":"Kyrgyzstan","value":70744},{"name":"Nigeria","value":66607},{"name":"Slovenia","value":65778},{"name":"Malaysia","value":59817},{"name":"Singapore","value":58165},{"name":"North Macedonia","value":56164},{"name":"Lithuania","value":51655},{"name":"Ghana","value":50941},{"name":"Puerto Rico","value":46923},{"name":"Afghanistan","value":45017},{"name":"El Salvador","value":37884},{"name":"Kosovo","value":35549},{"name":"Albania","value":34944},{"name":"Norway","value":33183},{"name":"Montenegro","value":32188},{"name":"South Korea","value":31735},{"name":"Luxembourg","value":31111},{"name":"Australia","value":27854},{"name":"Cameroon","value":22692},{"name":"Finland","value":22652},{"name":"Sri Lanka","value":21469},{"name":"Ivory Coast","value":21148},{"name":"Uganda","value":18890},{"name":"Zambia","value":17466},{"name":"Madagascar","value":17310},{"name":"Sudan","value":16431},{"name":"Senegal","value":15897},{"name":"Mozambique","value":15231},{"name":"Angola","value":14634},{"name":"Namibia","value":13897},{"name":"Latvia","value":13693},{"name":"French Polynesia","value":12978},{"name":"Guinea","value":12841},{"name":"Maldives","value":12810},{"name":"DR Congo","value":12310},{"name":"Tajikistan","value":11932},{"name":"Estonia","value":10541},{"name":"Jamaica","value":10418},{"name":"Cape Verde","value":10400},{"name":"Donetsk PR","value":9844},{"name":"Zimbabwe","value":9398},{"name":"Haiti","value":9208},{"name":"Malta","value":9137},{"name":"Gabon","value":9131},{"name":"Cyprus","value":8456},{"name":"Mauritania","value":8096},{"name":"Cuba","value":7950},{"name":"Bahamas","value":7395},{"name":"Syria","value":7225},{"name":"Botswana","value":6820},{"name":"Trinidad and Tobago","value":6488},{"name":"Guam","value":6476},{"name":"Andorra","value":6428},{"name":"Eswatini","value":6247},{"name":"Malawi","value":6018},{"name":"Nicaragua","value":5725},{"name":"Hong Kong","value":5702},{"name":"Rwanda","value":5665},{"name":"Djibouti","value":5661},{"name":"Congo","value":5632},{"name":"Abkhazia","value":5318},{"name":"Iceland","value":5312},{"name":"Suriname","value":5300},{"name":"Guyana","value":5189},{"name":"Equatorial Guinea","value":5130},{"name":"Belize","value":5056},{"name":"Central African Republic","value":4911},{"name":"Uruguay","value":4870},{"name":"Aruba","value":4778},{"name":"Somalia","value":4445},{"name":"Mali","value":4326},{"name":"Thailand","value":3926},{"name":"The Gambia","value":3726},{"name":"South Sudan","value":3047},{"name":"Benin","value":2844},{"name":"Togo","value":2651},{"name":"Burkina Faso","value":2635},{"name":"Guinea-Bissau","value":2419},{"name":"Sierra Leone","value":2408},{"name":"Yemen","value":2114},{"name":"Lesotho","value":2085},{"name":"Curaçao","value":1827},{"name":"South Ossetia","value":1684},{"name":"New Zealand","value":1683},{"name":"Luhansk PR","value":1669},{"name":"Chad","value":1649},{"name":"U.S. Virgin Islands","value":1491},{"name":"Liberia","value":1452},{"name":"San Marino","value":1428},{"name":"Niger","value":1351},{"name":"Vietnam","value":1316},{"name":"Somaliland","value":1223},{"name":"Liechtenstein","value":1158},{"name":"USS Theodore Roosevelt","value":1102},{"name":"Charles de Gaulle","value":1081},{"name":"Northern Cyprus","value":1048},{"name":"Sint Maarten","value":1020},{"name":"São Tomé and Príncipe","value":981},{"name":"Gibraltar","value":887},{"name":"Turks and Caicos Islands","value":746},{"name":"Diamond Princess","value":712},{"name":"Jersey","value":672},{"name":"Mongolia","value":672},{"name":"Taiwan","value":623},{"name":"Papua New Guinea","value":599},{"name":"Comoros","value":596},{"name":"Burundi","value":589},{"name":"Monaco","value":573},{"name":"Faroe Islands","value":497},{"name":"Eritrea","value":491},{"name":"Mauritius","value":453},{"name":"Artsakh","value":404},{"name":"Bhutan","value":386},{"name":"Isle of Man","value":359},{"name":"Cambodia","value":306},{"name":"Guernsey","value":282},{"name":"Barbados","value":262},{"name":"Cayman Islands","value":250},{"name":"Saint Lucia","value":226},{"name":"Bermuda","value":214},{"name":"Seychelles","value":166},{"name":"Costa Atlantica","value":148},{"name":"Brunei","value":148},{"name":"Antigua and Barbuda","value":139},{"name":"Bonaire","value":134},{"name":"Greg Mortimer","value":128},{"name":"Northern Mariana Islands","value":100},{"name":"Saint Vincent","value":84},{"name":"Dominica","value":77},{"name":"British Virgin Islands","value":72},{"name":"Macau","value":46},{"name":"Grenada","value":41},{"name":"Fiji","value":35},{"name":"East Timor","value":30},{"name":"New Caledonia","value":30},{"name":"Sahrawi Arab DR","value":28},{"name":"Vatican City","value":27},{"name":"Laos","value":25},{"name":"Saint Kitts and Nevis","value":19},{"name":"Greenland","value":17},{"name":"Falkland Islands","value":16},{"name":"Saint Pierre and Miquelon","value":16},{"name":"Solomon Islands","value":16},{"name":"Sint Eustatius","value":14},{"name":"Montserrat","value":13},{"name":"MS Zaandam","value":13},{"name":"Coral Princess","value":12},{"name":"SeaDream I","value":9},{"name":"HNLMS Dolfijn","value":8},{"name":"Marshall Islands","value":5},{"name":"Saba","value":5},{"name":"Anguilla","value":3},{"name":"American Samoa","value":3},{"name":"Wallis and Futuna","value":2},{"name":"Samoa","value":1},{"name":"Vanuatu","value":1},{"name":"Tanzania","value":"-"}]
-         }]
-    };;
-    // 使用刚指定的配置项和数据显示图表。
-    if (option && typeof option === 'object') {
-    myChart.setOption(option,true);
-    }
-    window.addEventListener('resize', function() {
-    myChart.resize();
-    });
-})();
+    /* 定义datezoom滑块位置 */
+    var begin=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
+    var end = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100];
+    var i=0;
+
