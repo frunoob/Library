@@ -102,13 +102,13 @@ function siteTime() {
     document.getElementById("daysToNow").innerHTML=(daysToNow(b_year, b_month, b_day)) + " 天 " + todayHour + " 小时 " + todayMinute + " 分钟 " + todaySecond + " 秒"
 }
 // 页脚内边距设为0
-footer=document.getElementById("footer-wrap");
-footer.style.padding = 0;
-// 移除页脚样式
-/* var app = document.getElementById('footer-wrap');
-app.removeAttribute('id'); */
-var app = document.getElementsByTagName("footer")[0];
-app.removeAttribute('id');
+// footer=document.getElementById("footer-wrap");
+// footer.style.padding = 0;
+// // 移除页脚样式
+// /* var app = document.getElementById('footer-wrap');
+// app.removeAttribute('id'); */
+// var app = document.getElementsByTagName("footer")[0];
+// app.removeAttribute('id');
 
 // 页眉颜色透明
 
