@@ -111,17 +111,3 @@ i.fa-fw.fas.fa-heart.fa-lg{
   font-size: 200%; */
   /* letter-spacing: -5%; */
 }
-
-/* 页脚 */
-#footer-wrap{
-  padding: 0;
-}
-footer{
-  background-color: rgba(255,255,255,0.05);
-}
-#footer{
-  background: #ffffff00;
-}
-header.full_page{
-  background:rgba(0,0,0,0);
-}

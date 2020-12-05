@@ -118,8 +118,8 @@ function siteTime() {
 app3.style.opacity=0. */
 
 // 方法二
-var app = document.querySelector("header.full_page");
-if(app==null) {}else{app.style.backgroundColor="rgba(0,0,0,0)";}
+// var app = document.querySelector("header.full_page");
+// if(app==null) {}else{app.style.backgroundColor="rgba(0,0,0,0)";}
 
 //添加动图在返回顶部按钮旁边
 /*添加图片top*/
