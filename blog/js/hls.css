@@ -17,6 +17,10 @@
   font-weight: normal;
   font-style: normal;
 }
+.video-js{
+  height: 100%;
+  width: 100%;
+}
 .vjs-icon-play, .video-js .vjs-play-control .vjs-icon-placeholder, .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
   font-family: VideoJS;
   font-weight: normal;
