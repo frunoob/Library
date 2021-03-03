@@ -126,7 +126,7 @@ i.fa-fw.fas.fa-heart.fa-lg{
   /* letter-spacing: -5%; */
 }
 /*主页顶部*/
-header.full_page{
+header.full_page#page-header{
   background: none;
 }
 footer#footer{
