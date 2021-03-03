@@ -125,3 +125,8 @@ i.fa-fw.fas.fa-heart.fa-lg{
   font-size: 200%; */
   /* letter-spacing: -5%; */
 }
+
+/* 底部样式 */
+header.full_page{
+  background-color: rgba(0, 0, 0, 0);
+}
