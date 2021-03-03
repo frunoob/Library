@@ -77,13 +77,32 @@ i.fa-fw.fas.fa-heart.fa-lg{
   --btn-bg: #7b7b7cc7;
   --text-bg-hover: #49f56ea1;
 }
+[data-theme='dark'] {
+  --global-bg: #0d0d0d;
+  --font-color: rgba(255,255,255,0.7);
+  --hr-border: rgba(255,255,255,0.4);
+  --hr-before-color: rgba(255,255,255,0.7);
+  --search-bg: #121212;
+  --search-input-color: rgba(255,255,255,0.7);
+  --search-result-title: rgba(255,255,255,0.9);
+  --preloader-bg: #0d0d0d;
+  --preloader-color: rgba(255,255,255,0.7);
+  --tab-border-color: #2c2c2c;
+  --tab-botton-bg: #2c2c2c;
+  --tab-botton-color: rgba(255,255,255,0.7);
+  --tab-button-hover-bg: #383838;
+  --tab-button-active-bg: #121212;
+  --card-bg: #1212127d;
+  --sidebar-bg: #121212;
+  --btn-hover-color: #4bb952a3;
+  --btn-color: rgb(172 229 251 / 98%);
+}
 #page-header.post-bg{
   opacity: 0.75;
 }
 #page-header.not-index-bg{
   background-color: rgba(0, 0, 0, 0);
 }
-
 
 /* 声明字体*/
 @font-face {
@@ -95,13 +114,8 @@ i.fa-fw.fas.fa-heart.fa-lg{
   src: url(https://cdn.jsdelivr.net/gh/frunoob/Library@master/font/xiaokai.ttf);
 }
 
-
 #yearsToNow{
   font-family: xiaokai;
-}
-#yearsToNow::after{
-  content: '\A';
-  white-space: pre;
 }
 #daysToNow{
   font-family: xiaokai;
