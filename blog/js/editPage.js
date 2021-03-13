@@ -1,1 +1,5 @@
-pageUrl = "https://github.com/frunoob/frunoob.github.io/edit/hexo/source"+location.pathname + "index.md";title.innerHTML = document.getElementsByClassName("page-title")[0].textContent + "<a href="+pageUrl+" target='_blank'> <i class='fas fa-pen-alt'></a>";
+if(document.getElementsByClassName("page-title")[0] != undefined  ){
+    title = document.getElementsByClassName("page-title")[0];
+pageUrl = "https://github.com/frunoob/frunoob.github.io/edit/hexo/source" + location.pathname + "index.md"; 
+title.innerHTML = title.textContent + "<a href=" + pageUrl + " target='_blank'> <i class='fas fa-pen-alt'></a>";
+}
