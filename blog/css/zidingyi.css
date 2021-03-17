@@ -133,7 +133,7 @@ footer#footer{
     background: none;
 }
 
-[data-theme='dark'] #web_bg:before, [data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
+[data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
     position: absolute;
     width: 100%;
     height: 100%;
