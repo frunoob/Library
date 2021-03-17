@@ -132,3 +132,11 @@ header.full_page#page-header{
 footer#footer{
     background: none;
 }
+
+[data-theme='dark'] #web_bg:before, [data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    content: '';
+}
